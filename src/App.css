@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.header{
+  width: 100vw;
+  background-color: cornflowerblue;
+  height: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  justify-content: center;
+  /* padding-left: 10px; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+Footer{
+  position: fixed;
+  bottom: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.mainnotediv{
+  /* background-color: aqua; */
+  width: 100vw;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  background-color: #f4f4fa;
+  width: 50%;
+  height: 60%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 5px;
+}
+@media(width<=800px){
+  .container{
+    background-color: #f4f4fa;
+    margin-left:20px ;
+    width: 80%;
+    height: 60%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 5px;
   }
 }
+textarea{
+  margin-top: 5px;
+  background: transparent;
+  text-align: center;
+  outline: none;
+  /* border: none; */
+  border: 1px solid black;
+  resize:vertical;
+  resize: none;
+  width: 80%;
+  height: 60% ;
+  border-radius: 10px;
+  padding: 5px;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input{
+  background: transparent;
+  text-align: center;
+  padding: 5px;
+  outline: none;
+  /* border: none; */
+  border: 1px solid black;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.btn{
+  /* width: 10px; */
+  position: relative;
+  bottom: -85px;
+  right: 50px;
+  border: 2px solid white;
+  border-radius: 30px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width:35px;
+  height: 35px;
+  border: none;
+  background-color:cornflowerblue ;
+  box-shadow: 1px 1px 5px black;
+}
+.btn:hover{
+  background-color:rgb(127, 247, 133) ;
+}
+
+.addicon{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.shownote{
+  width: 100vw;
+  /* background-color:violet; */
+  display: flex;
+  flex-flow: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.notecontainer{
+  padding: 10px;
+  background-color: aliceblue;
+  height: 12%;
+  width: 15%;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px black;
+}
+@media(width<=800px){
+  .notecontainer{
+    padding: 10px;
+    background-color: aliceblue;
+    height: 12%;
+    width: 35%;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+  }  
+}
+
+.deletebtn{
+  position: relative;
+  bottom: -6px;
+  border: 2px solid white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:35px;
+  height: 35px;
+  border: none;
+  background-color:cornflowerblue ;
+  box-shadow: 1px 1px 5px black;
+}
+.deletebtn:hover{
+  background-color: rgb(245, 120, 120);
+}
+
+.notetitle{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.notecontent{
+  margin: 5px;
 }

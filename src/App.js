@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import Header from './Components/Header';
+import Createnote from './Components/Createnote';
+// import Shownote from './Components/Shownote';
+import Shownotes from './Components/Shownotes';
+// import Bottom from './Components/Bottom';
 
-function App() {
+export default function App() {
+  const deleteList=(id)=>{
+    console.log('deleted'+id);
+    setitems((olditems)=>{
+     return olditems.filter((arr,index)=>{
+        return index!==id
+      })
+    })
+  }
+  const[items,setitems]=useState([])
+  const additem=(value)=>{
+   setitems((olditems)=>{
+    return [...olditems,value]
+   });
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    <Header/>
+    <Createnote onclick={additem}/>
 
-export default App;
+<div className='shownote'>
+    {
+      items.map((val,index)=>{
+    return(<Shownotes  
+          title={val.title} 
+          content={val.content}
+          id={index}
+          key={index}
+          ondelete={deleteList}
+          />)
+      })
+    }
+    </div>
+    </>
+  )
+}
